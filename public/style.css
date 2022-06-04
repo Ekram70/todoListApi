@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #066acd;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px 25px;
+  width: 450px;
+  margin: 50px auto 0;
+}
+
+.heading {
+  color: #066acd;
+  margin-bottom: 10px;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.todo-input {
+  border: 2px solid #d1d3d4;
+  height: 45px;
+  width: 75%;
+  padding: 12px;
+  font-size: 15px;
+  color: #111;
+  font-weight: 500;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.todo-input:focus {
+  border-color: #0d75ec;
+}
+
+.btn {
+  width: 20%;
+  height: 45px;
+  border-radius: 5px;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #0d75ec;
+  color: #fff;
+  border: none;
+}
+
+.list {
+  list-style-type: none;
+  counter-reset: items;
+}
+
+.item {
+  counter-increment: items;
+  background-color: #c3e0e4;
+  color: #111;
+  position: relative;
+  padding: 10px;
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  border: 2px solid #d1d3d4;
+  border-radius: 5px;
+}
+
+.item::before {
+  content: "0" counter(items);
+  position: absolute;
+  left: 10px;
+}
+
+.item:nth-child(n + 10)::before {
+  content: counter(items);
+}
+
+.text {
+  margin: 0px 10px;
+  padding: 0px 20px;
+  display: inline-block;
+  width: 85%;
+  word-break: break-word;
+}
+
+.edit,
+.complete,
+.undo,
+.delete {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  line-height: 100%;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.edit,
+.complete {
+  color: #2e7681;
+}
+
+.complete {
+  font-size: 20px;
+}
+
+.undo,
+.delete {
+  color: #a9a9a9;
+}
+
+.undo {
+  font-size: 18px;
+}
+
+.edit:hover,
+.complete:hover {
+  color: #066acd;
+}
+
+.undo:hover {
+  color: #04aa6d;
+}
+
+.delete:hover {
+  color: #ff0036;
+}
+
+.edit,
+.undo {
+  right: 30px;
+}
+
+.complete,
+.delete {
+  right: 0;
+}
+
+.completed-container {
+  margin-top: 40px;
+}
+
+.completed-container .heading {
+  color: #888;
+}
+
+.completed-container .item {
+  text-decoration: line-through;
+  background-color: #ddd;
+  color: #b5a7a7;
+}
